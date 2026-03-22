@@ -1,65 +1,259 @@
-import Image from "next/image";
+import Section from "@/components/Section";
 
 export default function Home() {
+  // Данные для главной секции
+  const mainSection = {
+    title: "Инновационные решения для будущего",
+    description:
+      "Мы создаем передовые технологии в области строительства, судостроения и авиации. Наша команда профессионалов реализует проекты любой сложности.",
+    buttonText: "Начать сотрудничество",
+    services: [
+      {
+        icon: "🚀",
+        title: "Инновации",
+        description: "Применяем передовые технологии и методики работы",
+      },
+      {
+        icon: "⭐",
+        title: "Качество",
+        description: "Строгий контроль на всех этапах реализации проектов",
+      },
+      {
+        icon: "🤝",
+        title: "Надежность",
+        description: "Гарантируем выполнение обязательств в срок",
+      },
+    ],
+    checklist: [
+      "Более 10 лет успешной работы",
+      "Команда высококвалифицированных специалистов",
+      "Современное оборудование и технологии",
+      "Индивидуальный подход к каждому клиенту",
+    ],
+  };
+
+  // Услуги секции
+  const servicesSection = {
+    title: "Наши услуги",
+    description:
+      "Предлагаем полный спектр услуг в области строительства, проектирования и консалтинга. Работаем с объектами любой сложности.",
+    services: [
+      {
+        icon: "🏗️",
+        title: "Строительство",
+        description: "Возведение объектов любой сложности под ключ",
+      },
+      {
+        icon: "📐",
+        title: "Проектирование",
+        description: "Разработка проектной документации",
+      },
+      {
+        icon: "📊",
+        title: "Консалтинг",
+        description: "Профессиональные консультации по реализации проектов",
+      },
+    ],
+    checklist: [
+      "Комплексный подход к решению задач",
+      "Соблюдение сроков и бюджета",
+      "Использование современных материалов",
+      "Постпроектное сопровождение",
+    ],
+  };
+
+  // Дорожная инфраструктура
+  const roadSection = {
+    title: "Дорожная инфраструктура",
+    description:
+      "Строительство и реконструкция автомобильных дорог, мостов и развязок. Используем инновационные материалы и технологии.",
+    services: [
+      {
+        icon: "🛣️",
+        title: "Автомагистрали",
+        description: "Строительство дорог высшей категории",
+      },
+      {
+        icon: "🌉",
+        title: "Мосты",
+        description: "Возведение мостовых сооружений любой сложности",
+      },
+      {
+        icon: "🔄",
+        title: "Развязки",
+        description: "Транспортные развязки и пересечения",
+      },
+    ],
+    checklist: [
+      "Сейсмостойкие конструкции",
+      "Интеллектуальные системы управления",
+      "Экологичные материалы",
+      "Долговечность и надежность",
+    ],
+  };
+
+  // Судостроение
+  const shipbuildingSection = {
+    title: "Судостроение",
+    description:
+      "Проектирование и строительство гражданских и специальных судов. Современные верфи и передовые технологии.",
+    services: [
+      {
+        icon: "🚢",
+        title: "Гражданские суда",
+        description: "Пассажирские и грузовые суда",
+      },
+      {
+        icon: "⚓",
+        title: "Спецтехника",
+        description: "Специализированные плавсредства",
+      },
+      {
+        icon: "🔧",
+        title: "Модернизация",
+        description: "Ремонт и обновление флота",
+      },
+    ],
+    checklist: [
+      "Современные конструкционные материалы",
+      "Энергоэффективные решения",
+      "Безопасность и надежность",
+      "Международные стандарты",
+    ],
+  };
+
+  // Авиационная отрасль
+  const aviationSection = {
+    title: "Крылья будущего",
+    description:
+      "Инновационные решения в авиастроении. Разработка и производство современных летательных аппаратов.",
+    services: [
+      {
+        icon: "✈️",
+        title: "Авиастроение",
+        description: "Производство летательных аппаратов",
+      },
+      {
+        icon: "🔬",
+        title: "Разработки",
+        description: "НИОКР в авиационной отрасли",
+      },
+      {
+        icon: "🛸",
+        title: "Беспилотники",
+        description: "БПЛА гражданского назначения",
+      },
+    ],
+    checklist: [
+      "Передовые аэродинамические решения",
+      "Композитные материалы",
+      "Цифровые технологии проектирования",
+      "Экологичность и эффективность",
+    ],
+  };
+
+  // Проекты
+  const projectsSection = {
+    title: "Наши проекты",
+    description:
+      "Реализованные проекты, которыми мы гордимся. Каждый проект - это результат командной работы и профессионального подхода.",
+    services: [
+      {
+        icon: "🏆",
+        title: "500+",
+        description: "Успешных проектов",
+      },
+      {
+        icon: "🌍",
+        title: "10+",
+        description: "Стран присутствия",
+      },
+      {
+        icon: "👥",
+        title: "1000+",
+        description: "Довольных клиентов",
+      },
+    ],
+    checklist: [
+      "Международный аэропорт",
+      "Современный морской порт",
+      "Высотные комплексы",
+      "Инновационные мосты",
+    ],
+  };
+
+  // О нас
+  const aboutSection = {
+    title: "О нас",
+    description:
+      "Мы - команда профессионалов с многолетним опытом в реализации сложных инженерных проектов. Наша миссия - создавать будущее сегодня.",
+    services: [
+      {
+        icon: "🎯",
+        title: "Миссия",
+        description: "Создавать инновационные решения для устойчивого развития",
+      },
+      {
+        icon: "👁️",
+        title: "Видение",
+        description: "Быть лидером в области технологического развития",
+      },
+      {
+        icon: "💎",
+        title: "Ценности",
+        description: "Качество, надежность, инновации, ответственность",
+      },
+    ],
+    checklist: [
+      "Профессиональная команда",
+      "Современные технологии",
+      "Индивидуальный подход",
+      "Гарантия качества",
+    ],
+    showButton: false,
+  };
+
+  // Контакты
+  const contactsSection = {
+    title: "Контакты",
+    description:
+      "Свяжитесь с нами любым удобным способом. Наши менеджеры ответят на все ваши вопросы.",
+    services: [
+      {
+        icon: "📍",
+        title: "Адрес",
+        description: "г. Москва, ул. Инновационная, д. 1",
+      },
+      {
+        icon: "📞",
+        title: "Телефон",
+        description: "+7 (495) 123-45-67",
+      },
+      {
+        icon: "✉️",
+        title: "Email",
+        description: "info@company.ru",
+      },
+    ],
+    checklist: [
+      "Пн-Пт: 9:00 - 18:00",
+      "Сб: 10:00 - 15:00",
+      "Вс: выходной",
+      "Онлайн-консультации 24/7",
+    ],
+    showButton: false,
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <Section id="main" {...mainSection} />
+      <Section id="services" {...servicesSection} />
+      <Section id="road" {...roadSection} />
+      <Section id="shipbuilding" {...shipbuildingSection} />
+      <Section id="aviation" {...aviationSection} />
+      <Section id="projects" {...projectsSection} />
+      <Section id="about" {...aboutSection} />
+      <Section id="contacts" {...contactsSection} />
+    </>
   );
 }
