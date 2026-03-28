@@ -45,3 +45,13 @@ html, body {
     padding-top: var(--header-height);
   }
 }
+
+@media (max-height: 700px) {
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  p {
+    font-size: 0.9rem !important;
+  }
+}

@@ -16,8 +16,8 @@ export default function SectionBottom({
 
   return (
     <div
-      className="bg-light-gray flex items-center overflow-y-auto"
-      style={{ height: "50%" }}
+      className="bg-light-gray flex items-center overflow-hidden"
+      style={{ height: "55%" }}
     >
       <div className="container-custom py-4 md:py-6 lg:py-8">
         {/* Services Grid */}
@@ -26,7 +26,7 @@ export default function SectionBottom({
             {services.map((service, index) => (
               <div
                 key={index}
-                className="text-center group hover:bg-white p-3 md:p-4 rounded-xl transition-all duration-300"
+                className="text-center group border border-solid border-gray-700 hover:bg-white p-3 md:p-4 rounded-xl transition-all duration-300"
               >
                 <div className="text-3xl md:text-4xl mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
@@ -54,10 +54,10 @@ export default function SectionBottom({
                   key={index}
                   className="flex items-center gap-2 md:gap-3 p-2 md:p-3 rounded-lg hover:bg-white/80 transition-all duration-300 group"
                 >
-                  <span className="text-blue text-lg md:text-xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <span className="text-blue text-lg md:text-xl shrink-0 group-hover:scale-110 transition-transform">
                     ✓
                   </span>
-                  <span className="text-sm md:text-base text-gray-700 group-hover:text-dark transition-colors">
+                  <span className="text-xs md:text-sm text-gray-700 group-hover:text-dark transition-colors">
                     {item}
                   </span>
                 </div>

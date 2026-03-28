@@ -21,14 +21,14 @@ export default function SectionTop({
     <div
       className="bg-black text-white flex items-center"
       style={{
-        height: "50%",
+        height: "45%",
         minHeight: "200px",
       }}
     >
       <div className="container-custom">
-        <div className="max-w-2xl">
-          <h2 className="font-bold mb-4 leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-            {title}
+        <div className="max-w-md">
+          <h2 className="font-bold mb-4 leading-relaxed text-2xl sm:text-3xl md:text-4xl lg:text-5xl whitespace-pre-line">
+            {title.toUpperCase()}
           </h2>
           <p className="text-gray-300 mb-6 leading-relaxed text-sm sm:text-base md:text-lg">
             {description}
