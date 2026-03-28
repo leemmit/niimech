@@ -1,8 +1,22 @@
-import Section from "@/components/Section";
+export interface ServiceItem {
+  icon: string;
+  title: string;
+  description: string;
+}
 
-export default function Home() {
-  // Данные для главной секции
-  const mainSection = {
+export interface SectionData {
+  id: string;
+  title: string;
+  description: string;
+  services?: ServiceItem[];
+  checklist?: string[];
+  buttonText?: string;
+  showButton?: boolean;
+}
+
+export const sectionsData: SectionData[] = [
+  {
+    id: "main",
     title: "Инновационные решения для будущего",
     description:
       "Мы создаем передовые технологии в области строительства, судостроения и авиации. Наша команда профессионалов реализует проекты любой сложности.",
@@ -30,10 +44,9 @@ export default function Home() {
       "Современное оборудование и технологии",
       "Индивидуальный подход к каждому клиенту",
     ],
-  };
-
-  // Услуги секции
-  const servicesSection = {
+  },
+  {
+    id: "services",
     title: "Наши услуги",
     description:
       "Предлагаем полный спектр услуг в области строительства, проектирования и консалтинга. Работаем с объектами любой сложности.",
@@ -60,10 +73,9 @@ export default function Home() {
       "Использование современных материалов",
       "Постпроектное сопровождение",
     ],
-  };
-
-  // Дорожная инфраструктура
-  const roadSection = {
+  },
+  {
+    id: "road",
     title: "Дорожная инфраструктура",
     description:
       "Строительство и реконструкция автомобильных дорог, мостов и развязок. Используем инновационные материалы и технологии.",
@@ -90,10 +102,9 @@ export default function Home() {
       "Экологичные материалы",
       "Долговечность и надежность",
     ],
-  };
-
-  // Судостроение
-  const shipbuildingSection = {
+  },
+  {
+    id: "shipbuilding",
     title: "Судостроение",
     description:
       "Проектирование и строительство гражданских и специальных судов. Современные верфи и передовые технологии.",
@@ -120,10 +131,9 @@ export default function Home() {
       "Безопасность и надежность",
       "Международные стандарты",
     ],
-  };
-
-  // Авиационная отрасль
-  const aviationSection = {
+  },
+  {
+    id: "aviation",
     title: "Крылья будущего",
     description:
       "Инновационные решения в авиастроении. Разработка и производство современных летательных аппаратов.",
@@ -150,10 +160,9 @@ export default function Home() {
       "Цифровые технологии проектирования",
       "Экологичность и эффективность",
     ],
-  };
-
-  // Проекты
-  const projectsSection = {
+  },
+  {
+    id: "projects",
     title: "Наши проекты",
     description:
       "Реализованные проекты, которыми мы гордимся. Каждый проект - это результат командной работы и профессионального подхода.",
@@ -180,10 +189,9 @@ export default function Home() {
       "Высотные комплексы",
       "Инновационные мосты",
     ],
-  };
-
-  // О нас
-  const aboutSection = {
+  },
+  {
+    id: "about",
     title: "О нас",
     description:
       "Мы - команда профессионалов с многолетним опытом в реализации сложных инженерных проектов. Наша миссия - создавать будущее сегодня.",
@@ -211,10 +219,9 @@ export default function Home() {
       "Гарантия качества",
     ],
     showButton: false,
-  };
-
-  // Контакты
-  const contactsSection = {
+  },
+  {
+    id: "contacts",
     title: "Контакты",
     description:
       "Свяжитесь с нами любым удобным способом. Наши менеджеры ответят на все ваши вопросы.",
@@ -242,18 +249,5 @@ export default function Home() {
       "Онлайн-консультации 24/7",
     ],
     showButton: false,
-  };
-
-  return (
-    <>
-      <Section id="main" {...mainSection} />
-      <Section id="services" {...servicesSection} />
-      <Section id="road" {...roadSection} />
-      <Section id="shipbuilding" {...shipbuildingSection} />
-      <Section id="aviation" {...aviationSection} />
-      <Section id="projects" {...projectsSection} />
-      <Section id="about" {...aboutSection} />
-      <Section id="contacts" {...contactsSection} />
-    </>
-  );
-}
+  },
+];

@@ -1,19 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+export default function Header() {
   const navItems = [
     { name: "Услуги", href: "#services" },
     { name: "Проекты", href: "#projects" },
@@ -23,20 +12,17 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full bg-dark-gray z-50 transition-shadow ${isScrolled ? "shadow-lg" : ""}`}
+      className="fixed top-0 left-0 w-full bg-dark-gray z-50"
+      style={{ height: "var(--header-height)" }}
     >
-      <div className="container-custom h-header flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Link
-            href="/"
-            className="text-2xl font-bold text-light-gray hover:text-blue transition-colors"
-          >
-            LOGO
-          </Link>
-        </div>
+      <div className="container-custom h-full flex items-center justify-between">
+        <Link
+          href="/"
+          className="text-2xl font-bold text-light-gray hover:text-blue transition-colors"
+        >
+          LOGO
+        </Link>
 
-        {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
             <Link
@@ -52,7 +38,6 @@ const Header = () => {
           </button>
         </nav>
 
-        {/* Mobile menu button */}
         <button className="md:hidden text-light-gray">
           <svg
             className="w-6 h-6"
@@ -71,6 +56,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}
