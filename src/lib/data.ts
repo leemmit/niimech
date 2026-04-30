@@ -1,14 +1,20 @@
+import { IconKey } from "./icons";
+
 export interface ServiceItem {
-  icon: string;
+  icon: IconKey;
   title: string;
-  description: string;
+  description?: string;
 }
 
 export interface SectionData {
   id: string;
   title: string;
+  image: string;
   description: string;
+  servicesTitle?: string;
+  servicesTitle2?: string;
   services?: ServiceItem[];
+  services2?: ServiceItem[];
   checklist?: string[];
   buttonText?: string;
   showButton?: boolean;
@@ -17,24 +23,43 @@ export interface SectionData {
 export const sectionsData: SectionData[] = [
   {
     id: "main",
-    title: "Проектируем уверенность.\nЦифровая инженирия для критических задач",
-    description: "",
+    title: "Проектируем уверенность.\nЦифровая инженерия для критических задач",
+    image: "/logo_glow3.png",
+    description:
+      "Единственная аккредитованная лаборатория виртуальных испытаний в России. С 2015 года — надёжность в каждом расчёте",
     buttonText: "Начать сотрудничество",
+    servicesTitle: "Наши направления",
+    servicesTitle2: "Ключевые услуги",
     services: [
       {
-        icon: "🚀",
-        title: "Инновации",
-        description: "Применяем передовые технологии и методики работы",
+        icon: "plane",
+        title: "Авиакосмическая отрасль",
       },
       {
-        icon: "⭐",
-        title: "Качество",
-        description: "Строгий контроль на всех этапах реализации проектов",
+        icon: "ship",
+        title: "Судостроение",
       },
       {
-        icon: "🤝",
-        title: "Надежность",
-        description: "Гарантируем выполнение обязательств в срок",
+        icon: "road",
+        title: "Дорожная инфраструктура",
+      },
+    ],
+    services2: [
+      {
+        icon: "tvMinimal",
+        title: "Цифровые двойники",
+      },
+      {
+        icon: "monitorCheck",
+        title: "Виртуальная сертификация",
+      },
+      {
+        icon: "chartNoAxesCombined",
+        title: "Предиктивная аналитика",
+      },
+      {
+        icon: "userSearch",
+        title: "Инженерный консалтинг",
       },
     ],
     checklist: [],
@@ -42,21 +67,22 @@ export const sectionsData: SectionData[] = [
   {
     id: "services",
     title: "Наши услуги",
+    image: "/ship2.png",
     description:
       "Предлагаем полный спектр услуг в области строительства, проектирования и консалтинга. Работаем с объектами любой сложности.",
     services: [
       {
-        icon: "🏗️",
+        icon: "hammer",
         title: "Строительство",
         description: "Возведение объектов любой сложности под ключ",
       },
       {
-        icon: "📐",
+        icon: "rulerDimensionLine",
         title: "Проектирование",
         description: "Разработка проектной документации",
       },
       {
-        icon: "📊",
+        icon: "chartBarStacked",
         title: "Консалтинг",
         description: "Профессиональные консультации по реализации проектов",
       },
@@ -71,21 +97,22 @@ export const sectionsData: SectionData[] = [
   {
     id: "road",
     title: "Дорожная инфраструктура",
+    image: "/roads2.png",
     description:
       "Строительство и реконструкция автомобильных дорог, мостов и развязок. Используем инновационные материалы и технологии.",
     services: [
       {
-        icon: "🛣️",
+        icon: "road",
         title: "Автомагистрали",
         description: "Строительство дорог высшей категории",
       },
       {
-        icon: "🌉",
+        icon: "road",
         title: "Мосты",
         description: "Возведение мостовых сооружений любой сложности",
       },
       {
-        icon: "🔄",
+        icon: "road",
         title: "Развязки",
         description: "Транспортные развязки и пересечения",
       },
@@ -100,21 +127,22 @@ export const sectionsData: SectionData[] = [
   {
     id: "shipbuilding",
     title: "Судостроение",
+    image: "/ship2.png",
     description:
       "Проектирование и строительство гражданских и специальных судов. Современные верфи и передовые технологии.",
     services: [
       {
-        icon: "🚢",
+        icon: "ship",
         title: "Гражданские суда",
         description: "Пассажирские и грузовые суда",
       },
       {
-        icon: "⚓",
+        icon: "ship",
         title: "Спецтехника",
         description: "Специализированные плавсредства",
       },
       {
-        icon: "🔧",
+        icon: "ship",
         title: "Модернизация",
         description: "Ремонт и обновление флота",
       },
@@ -129,21 +157,22 @@ export const sectionsData: SectionData[] = [
   {
     id: "aviation",
     title: "Крылья будущего",
+    image: "/plane2.png",
     description:
       "Инновационные решения в авиастроении. Разработка и производство современных летательных аппаратов.",
     services: [
       {
-        icon: "✈️",
+        icon: "plane",
         title: "Авиастроение",
         description: "Производство летательных аппаратов",
       },
       {
-        icon: "🔬",
+        icon: "plane",
         title: "Разработки",
         description: "НИОКР в авиационной отрасли",
       },
       {
-        icon: "🛸",
+        icon: "plane",
         title: "Беспилотники",
         description: "БПЛА гражданского назначения",
       },
@@ -158,21 +187,22 @@ export const sectionsData: SectionData[] = [
   {
     id: "projects",
     title: "Наши проекты",
+    image: "/logo_glow3.png",
     description:
       "Реализованные проекты, которыми мы гордимся. Каждый проект - это результат командной работы и профессионального подхода.",
     services: [
       {
-        icon: "🏆",
+        icon: "globe",
         title: "500+",
         description: "Успешных проектов",
       },
       {
-        icon: "🌍",
+        icon: "globe",
         title: "10+",
         description: "Стран присутствия",
       },
       {
-        icon: "👥",
+        icon: "globe",
         title: "1000+",
         description: "Довольных клиентов",
       },
@@ -187,21 +217,22 @@ export const sectionsData: SectionData[] = [
   {
     id: "about",
     title: "О нас",
+    image: "",
     description:
       "Мы - команда профессионалов с многолетним опытом в реализации сложных инженерных проектов. Наша миссия - создавать будущее сегодня.",
     services: [
       {
-        icon: "🎯",
+        icon: "phone",
         title: "Миссия",
         description: "Создавать инновационные решения для устойчивого развития",
       },
       {
-        icon: "👁️",
+        icon: "phone",
         title: "Видение",
         description: "Быть лидером в области технологического развития",
       },
       {
-        icon: "💎",
+        icon: "phone",
         title: "Ценности",
         description: "Качество, надежность, инновации, ответственность",
       },
@@ -217,21 +248,22 @@ export const sectionsData: SectionData[] = [
   {
     id: "contacts",
     title: "Контакты",
+    image: "",
     description:
       "Свяжитесь с нами любым удобным способом. Наши менеджеры ответят на все ваши вопросы.",
     services: [
       {
-        icon: "📍",
+        icon: "phone",
         title: "Адрес",
         description: "г. Москва, ул. Инновационная, д. 1",
       },
       {
-        icon: "📞",
+        icon: "phone",
         title: "Телефон",
         description: "+7 (495) 123-45-67",
       },
       {
-        icon: "✉️",
+        icon: "phone",
         title: "Email",
         description: "info@company.ru",
       },

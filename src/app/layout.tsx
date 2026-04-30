@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
 export const metadata: Metadata = {
-  title: "Компания - Инновационные решения",
+  title: "МИПК - Инженерное цифровое превосходство",
   description:
     "Профессиональные решения в области строительства, судостроения и авиации",
 };
@@ -21,7 +21,14 @@ export default function RootLayout({
     <html lang="ru">
       <body className={inter.className}>
         <Header />
-        <main style={{ paddingTop: "var(--header-height)" }}>{children}</main>
+        <main
+          style={{
+            paddingTop: "var(--header-height)",
+            backgroundColor: "e6e6e6",
+          }}
+        >
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

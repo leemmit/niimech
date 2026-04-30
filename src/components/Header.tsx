@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   const navItems = [
     { name: "Услуги", href: "#services" },
     { name: "Проекты", href: "#projects" },
     { name: "О нас", href: "#about" },
+    { name: "Команда", href: "#team" },
     { name: "Контакты", href: "#contacts" },
   ];
 
@@ -16,11 +18,8 @@ export default function Header() {
       style={{ height: "var(--header-height)" }}
     >
       <div className="container-custom h-full flex items-center justify-between">
-        <Link
-          href="/"
-          className="text-2xl font-bold text-light-gray hover:text-blue transition-colors"
-        >
-          LOGO
+        <Link href="/" className="flex flex-col items-center relative">
+          <Image src="/logo3.png" alt="Logo" width={50} height={50} priority />
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
@@ -34,7 +33,7 @@ export default function Header() {
             </Link>
           ))}
           <button className="bg-blue text-white px-6 py-2 rounded-lg hover:bg-blue-hover transition-colors duration-300">
-            Оставить заявку
+            Получить консультацию
           </button>
         </nav>
 
