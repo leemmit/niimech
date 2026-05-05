@@ -22,49 +22,6 @@ export interface SectionData {
 
 export const sectionsData: SectionData[] = [
   {
-    id: "main",
-    title: "Проектируем уверенность.\nЦифровая инженерия для критических задач",
-    image: "/logo_glow3.png",
-    description:
-      "Единственная аккредитованная лаборатория виртуальных испытаний в России. С 2015 года — надёжность в каждом расчёте",
-    buttonText: "Начать сотрудничество",
-    servicesTitle: "Наши направления",
-    servicesTitle2: "Ключевые услуги",
-    services: [
-      {
-        icon: "plane",
-        title: "Авиакосмическая отрасль",
-      },
-      {
-        icon: "ship",
-        title: "Судостроение",
-      },
-      {
-        icon: "road",
-        title: "Дорожная инфраструктура",
-      },
-    ],
-    services2: [
-      {
-        icon: "tvMinimal",
-        title: "Цифровые двойники",
-      },
-      {
-        icon: "monitorCheck",
-        title: "Виртуальная сертификация",
-      },
-      {
-        icon: "chartNoAxesCombined",
-        title: "Предиктивная аналитика",
-      },
-      {
-        icon: "userSearch",
-        title: "Инженерный консалтинг",
-      },
-    ],
-    checklist: [],
-  },
-  {
     id: "services",
     title: "Наши услуги",
     image: "/ship2.png",

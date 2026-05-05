@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import Button from "@/ui/Button";
+import PartnersSlider from "@/ui/PartnersSlider";
+import "swiper/css";
 
 export default function Hero() {
   return (
@@ -23,7 +25,7 @@ export default function Hero() {
               Единственная аккредитованная лаборатория виртуальных испытаний в
               России. С 2015 года — надёжность в каждом расчёте
             </p>
-            <div>
+            <div className="flex gap-8">
               <Button href="#count">Рассчитать проект</Button>
               <Button href="#cases" variant="outline">
                 Посмотреть кейсы
@@ -31,11 +33,17 @@ export default function Hero() {
             </div>
           </div>
           <div className="relative w-full max-w-[400px] h-[250px]">
+            {/* 🔵 Glow */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-100 h-100 bg-[#16b5da] rounded-full blur-3xl opacity-15"></div>
+            </div>
+
+            {/* 🖼 Картинка */}
             <Image
               src="/logo_glow3.png"
-              alt="sfkh"
+              alt="logo"
               fill
-              className="object-contain"
+              className="object-contain relative z-10"
               priority
             />
           </div>
@@ -44,12 +52,12 @@ export default function Hero() {
       <div className="bg-white pt-5 md:pt-8">
         <div className="">
           {/* Заголовок */}
-          <h2 className="text-center text-2xl md:text-xl font-semibold text-gray-600">
+          <h1 className="text-center text-4xl md:text-xl font-semibold text-gray-600">
             Нам доверяют
-          </h2>
+          </h1>
 
           {/* Логотипы */}
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+          {/* <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
             <Image
               src="/autodor.png"
               alt="Автодор"
@@ -81,7 +89,9 @@ export default function Hero() {
               height={40}
               className="bg-gray-100 object-contain hover:grayscale hover:opacity-100 transition duration-300"
             />
-          </div>
+          </div> */}
+
+          <PartnersSlider />
         </div>
       </div>
     </>
