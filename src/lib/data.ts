@@ -20,6 +20,110 @@ export interface SectionData {
   showButton?: boolean;
 }
 
+export const block2: ServiceItem[] = [
+  {
+    icon: "RectangleGoggles",
+    title: "1000+",
+    description: "Виртуальных испытаний проведено",
+  },
+  {
+    icon: "ClipboardList",
+    title: "30+",
+    description: "Разработанных стандартов (ГОСТ, ОДМ, СТО)",
+  },
+  {
+    icon: "Users",
+    title: "43+",
+    description: "Постоянных партнёров и заказчиков",
+  },
+  {
+    icon: "Handshake",
+    title: "50%",
+    description: "Клиентов возвращаются с повторными заказами",
+  },
+  {
+    icon: "Signature",
+    title: "10+",
+    description: "Уникальных решений и патентов",
+  },
+  {
+    icon: "Medal",
+    title: "№1",
+    description:
+      "Единственная аккредитованная лаборатория цифровых виртуальных испытаний в РФ",
+  },
+];
+
+export const timelineData = [
+  {
+    date: "",
+    title: "1. Постановка задачи",
+    description:
+      "Встреча с заказчиком, анализ конструкции, определение целей испытания",
+  },
+  {
+    date: "",
+    title: "2. Создание КЭ-модели",
+    description:
+      "Разработка высокоточной цифровой модели объекта с верификацией материалов",
+  },
+  {
+    date: "",
+    title: "3. Виртуальные испытания",
+    description:
+      "Проведение симуляций, анализ нагрузок, краш-тестов, тепловых полей",
+  },
+  {
+    date: "",
+    title: "4. Оптимизация",
+    description:
+      "Доработка конструкции на основе результатов — до 5 итераций включено в проект",
+  },
+  {
+    date: "",
+    title: "5. Отчет и сертификация",
+    description:
+      "Предоставление технического отчёта, поддержка прохождения сертификации",
+  },
+];
+
+export const servicesTabs = [
+  {
+    title: "Виртуальные испытания",
+    content: [
+      "Моделирование методом конечных элементов (FEM)",
+      "Виртуальная сертификация по ТР ТС 014/2011",
+      "Краш-тесты",
+      "Анализ прочности и жёсткости",
+    ],
+  },
+  {
+    title: "Цифровые двойники",
+    content: [
+      "Проектирование дорожных ограждений",
+      "Акустические экраны",
+      "Мостовые конструкции",
+      "Аэрокосмическая и судостроительная отрасли",
+    ],
+  },
+  {
+    title: "Нормативная документация",
+    content: [
+      "Разработка ГОСТ, ОДМ, СТО",
+      "Технические условия",
+      "Экспертизы и заключения",
+    ],
+  },
+  {
+    title: "Реконструкция ДТП",
+    content: [
+      "КЭ-модели ДТП",
+      "Анализ причин разрушений",
+      "Судебная экспертиза",
+    ],
+  },
+];
+
 export const sectionsData: SectionData[] = [
   {
     id: "services",
@@ -29,17 +133,17 @@ export const sectionsData: SectionData[] = [
       "Предлагаем полный спектр услуг в области строительства, проектирования и консалтинга. Работаем с объектами любой сложности.",
     services: [
       {
-        icon: "hammer",
+        icon: "Hammer",
         title: "Строительство",
         description: "Возведение объектов любой сложности под ключ",
       },
       {
-        icon: "rulerDimensionLine",
+        icon: "RulerDimensionLine",
         title: "Проектирование",
         description: "Разработка проектной документации",
       },
       {
-        icon: "chartBarStacked",
+        icon: "ChartBarStacked",
         title: "Консалтинг",
         description: "Профессиональные консультации по реализации проектов",
       },
@@ -59,17 +163,17 @@ export const sectionsData: SectionData[] = [
       "Строительство и реконструкция автомобильных дорог, мостов и развязок. Используем инновационные материалы и технологии.",
     services: [
       {
-        icon: "road",
+        icon: "Road",
         title: "Автомагистрали",
         description: "Строительство дорог высшей категории",
       },
       {
-        icon: "road",
+        icon: "Road",
         title: "Мосты",
         description: "Возведение мостовых сооружений любой сложности",
       },
       {
-        icon: "road",
+        icon: "Road",
         title: "Развязки",
         description: "Транспортные развязки и пересечения",
       },
@@ -89,17 +193,17 @@ export const sectionsData: SectionData[] = [
       "Проектирование и строительство гражданских и специальных судов. Современные верфи и передовые технологии.",
     services: [
       {
-        icon: "ship",
+        icon: "Ship",
         title: "Гражданские суда",
         description: "Пассажирские и грузовые суда",
       },
       {
-        icon: "ship",
+        icon: "Ship",
         title: "Спецтехника",
         description: "Специализированные плавсредства",
       },
       {
-        icon: "ship",
+        icon: "Ship",
         title: "Модернизация",
         description: "Ремонт и обновление флота",
       },
@@ -119,17 +223,17 @@ export const sectionsData: SectionData[] = [
       "Инновационные решения в авиастроении. Разработка и производство современных летательных аппаратов.",
     services: [
       {
-        icon: "plane",
+        icon: "Plane",
         title: "Авиастроение",
         description: "Производство летательных аппаратов",
       },
       {
-        icon: "plane",
+        icon: "Plane",
         title: "Разработки",
         description: "НИОКР в авиационной отрасли",
       },
       {
-        icon: "plane",
+        icon: "Plane",
         title: "Беспилотники",
         description: "БПЛА гражданского назначения",
       },
@@ -149,17 +253,17 @@ export const sectionsData: SectionData[] = [
       "Реализованные проекты, которыми мы гордимся. Каждый проект - это результат командной работы и профессионального подхода.",
     services: [
       {
-        icon: "globe",
+        icon: "Globe",
         title: "500+",
         description: "Успешных проектов",
       },
       {
-        icon: "globe",
+        icon: "Globe",
         title: "10+",
         description: "Стран присутствия",
       },
       {
-        icon: "globe",
+        icon: "Globe",
         title: "1000+",
         description: "Довольных клиентов",
       },
@@ -179,17 +283,17 @@ export const sectionsData: SectionData[] = [
       "Мы - команда профессионалов с многолетним опытом в реализации сложных инженерных проектов. Наша миссия - создавать будущее сегодня.",
     services: [
       {
-        icon: "phone",
+        icon: "Phone",
         title: "Миссия",
         description: "Создавать инновационные решения для устойчивого развития",
       },
       {
-        icon: "phone",
+        icon: "Phone",
         title: "Видение",
         description: "Быть лидером в области технологического развития",
       },
       {
-        icon: "phone",
+        icon: "Phone",
         title: "Ценности",
         description: "Качество, надежность, инновации, ответственность",
       },
@@ -210,17 +314,17 @@ export const sectionsData: SectionData[] = [
       "Свяжитесь с нами любым удобным способом. Наши менеджеры ответят на все ваши вопросы.",
     services: [
       {
-        icon: "phone",
+        icon: "Phone",
         title: "Адрес",
         description: "г. Москва, ул. Инновационная, д. 1",
       },
       {
-        icon: "phone",
+        icon: "Phone",
         title: "Телефон",
         description: "+7 (495) 123-45-67",
       },
       {
-        icon: "phone",
+        icon: "Phone",
         title: "Email",
         description: "info@company.ru",
       },
