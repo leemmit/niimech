@@ -3,7 +3,8 @@ import Section from "@/components/section/Section";
 import ServicesGrid from "@/components/section/ServicesGrid";
 import Timeline from "@/components/Timeline";
 import Tabs from "@/components/Tabs";
-import { sectionsData, ServiceItem } from "@/lib/data";
+import Projects from "@/components/Projects";
+import { projectsData, sectionsData, ServiceItem } from "@/lib/data";
 import { block2, timelineData, servicesTabs } from "@/lib/data";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <ServicesGrid services={block2} />
       <Tabs tabs={servicesTabs} />
       <Timeline items={timelineData} />
+      <Projects projects={projectsData} />
       {sectionsData.map((section) => (
         <Section
           key={section.id}
