@@ -20,6 +20,35 @@ export interface SectionData {
   showButton?: boolean;
 }
 
+export interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+}
+
+export const team: TeamMember[] = [
+  {
+    name: "Тавшавадзе Бека Темурович",
+    role: "Генеральный директор",
+    image: "/team/beka.jpg",
+  },
+  {
+    name: "Карпов Илья Анатольевич",
+    role: "Технический директор",
+    image: "/team/karpov.jpg",
+  },
+  {
+    name: "Мухаметова Аделина Артуровна",
+    role: "Заведующий лабораторией",
+    image: "/team/adelina.jpg",
+  },
+  {
+    name: "Демьянушко Ирина Вадимовна",
+    role: "Директор по развитию",
+    image: "/team/irina.jpg",
+  },
+];
+
 export const block2: ServiceItem[] = [
   {
     icon: "RectangleGoggles",
@@ -203,6 +232,61 @@ export const projectsData = [
     ],
     details:
       "С помощью цифрового моделирования удалось оптимизировать конструкцию экрана, снизив материалоёмкость без потери эффективности.",
+  },
+];
+
+import {
+  BadgeCheck,
+  Wallet,
+  Clock3,
+  ShieldCheck,
+  Users,
+  Layers3,
+  LucideIcon,
+} from "lucide-react";
+
+export interface AdvantageItem {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export const advantages: AdvantageItem[] = [
+  {
+    icon: "BadgeCheck",
+    title: "Единственная аккредитованная лаборатория",
+    description:
+      "Официальная аккредитация ИДЭОД. Результаты признаются при сертификации по ТР ТС 014/2011.",
+  },
+  {
+    icon: "Wallet",
+    title: "Экономия до 70% на испытаниях",
+    description:
+      "Виртуальные испытания значительно дешевле натурных и не требуют физических прототипов.",
+  },
+  {
+    icon: "Clock3",
+    title: "Скорость реализации",
+    description:
+      "Типовой проект выполняется за 4–6 недель вместе с итерациями доработки.",
+  },
+  {
+    icon: "ShieldCheck",
+    title: "Верификация и валидация",
+    description:
+      "Все модели проходят процедуру V&V и соответствуют результатам натурных испытаний.",
+  },
+  {
+    icon: "Users",
+    title: "Экспертная команда",
+    description:
+      "24 специалиста, более 35% с учёной степенью. Основаны на базе МАДИ.",
+  },
+  {
+    icon: "Layers3",
+    title: "Полный цикл",
+    description:
+      "От 3D-модели до полного комплекта документации для сертификации.",
   },
 ];
 

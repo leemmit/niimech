@@ -4,8 +4,17 @@ import ServicesGrid from "@/components/section/ServicesGrid";
 import Timeline from "@/components/Timeline";
 import Tabs from "@/components/Tabs";
 import Projects from "@/components/Projects";
+import Advantages from "@/components/Advantages";
+import Team from "@/components/Team";
+import ContactForm from "@/components/ContactForm";
 import { projectsData, sectionsData, ServiceItem } from "@/lib/data";
-import { block2, timelineData, servicesTabs } from "@/lib/data";
+import {
+  block2,
+  timelineData,
+  servicesTabs,
+  team,
+  advantages,
+} from "@/lib/data";
 
 export default function Home() {
   return (
@@ -15,7 +24,11 @@ export default function Home() {
       <Tabs tabs={servicesTabs} />
       <Timeline items={timelineData} />
       <Projects projects={projectsData} />
-      {sectionsData.map((section) => (
+      <Advantages items={advantages} />
+      <Team members={team} />
+      <ContactForm />
+
+      {/* {sectionsData.map((section) => (
         <Section
           key={section.id}
           id={section.id}
@@ -30,7 +43,7 @@ export default function Home() {
           buttonText={section.buttonText}
           showButton={section.showButton}
         />
-      ))}
+      ))} */}
     </>
   );
 }
