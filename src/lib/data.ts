@@ -26,6 +26,12 @@ export interface TeamMember {
   image: string;
 }
 
+export interface AdvantageItem {
+  icon: IconKey;
+  title: string;
+  description: string;
+}
+
 export const team: TeamMember[] = [
   {
     name: "Тавшавадзе Бека Темурович",
@@ -234,22 +240,6 @@ export const projectsData = [
       "С помощью цифрового моделирования удалось оптимизировать конструкцию экрана, снизив материалоёмкость без потери эффективности.",
   },
 ];
-
-import {
-  BadgeCheck,
-  Wallet,
-  Clock3,
-  ShieldCheck,
-  Users,
-  Layers3,
-  LucideIcon,
-} from "lucide-react";
-
-export interface AdvantageItem {
-  icon: string;
-  title: string;
-  description: string;
-}
 
 export const advantages: AdvantageItem[] = [
   {
