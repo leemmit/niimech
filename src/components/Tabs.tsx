@@ -18,6 +18,11 @@ export default function Tabs({ tabs }: TabsProps) {
 
   return (
     <section id="services" className="w-full bg-gray-100 py-10">
+      <div className="container-custom">
+        <span className="text-sm uppercase tracking-[0.2em] text-[#16b5da] font-semibold">
+          Услуги
+        </span>
+      </div>
       <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-40 items-center">
         {/* ===== LEFT: TABS ===== */}
         <div className="flex flex-col gap-3 items-end">

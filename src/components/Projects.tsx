@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import GalleryCarousel from "@/ui/GalleryCarousel";
 import { galleries } from "@/lib/generated-galleries";
 import { MoveRight } from "lucide-react";
+import Button from "@/ui/Button";
 
 interface Project {
   title: string;
@@ -45,9 +46,14 @@ export default function Projects({ projects }: Props) {
   }, [showAll]);
 
   return (
-    <section id="projects" className="w-full bg-gray-100 py-16">
+    <section id="projects" className="w-full bg-gray-100 py-10">
       <div className="container-custom">
-        <h2 className="text-3xl font-bold mb-10">Проекты</h2>
+        <span className="text-sm uppercase tracking-[0.2em] text-[#16b5da] font-semibold">
+          Проекты
+        </span>
+        <h2 className="text-4xl md:text-4xl font-bold mt-2 mb-5 leading-tight whitespace-pre-line">
+          Наши работы
+        </h2>
 
         {/* GRID */}
         <div
@@ -129,11 +135,8 @@ export default function Projects({ projects }: Props) {
         </div>
 
         {/* BUTTON */}
-        <div className="text-center mt-10">
-          <button
-            onClick={() => setShowAll((v) => !v)}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition flex items-center gap-2 mx-auto"
-          >
+        <div className="text-center ">
+          <Button className="mt-4" onClick={() => setShowAll((v) => !v)}>
             {showAll ? "Скрыть" : "Показать все"}
             <ChevronDown
               className={`transition-transform duration-300 ${
@@ -141,7 +144,7 @@ export default function Projects({ projects }: Props) {
               }`}
               size={16}
             />
-          </button>
+          </Button>
         </div>
 
         {/* MODAL */}
@@ -182,9 +185,7 @@ export default function Projects({ projects }: Props) {
                 </div> */}
 
                 <div>
-                  <h4 className="font-semibold text-lg mb-1">
-                    Подробное описание
-                  </h4>
+                  <h4 className="font-semibold text-lg mb-1">Описание</h4>
 
                   <p className="text-gray-600 leading-relaxed">
                     {activeProject.details}

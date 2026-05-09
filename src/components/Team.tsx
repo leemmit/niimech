@@ -27,7 +27,7 @@ export default function Team({
   return (
     <section
       id="team"
-      className="w-full bg-black text-white py-20 overflow-hidden"
+      className="w-full bg-black text-white py-10 overflow-hidden"
     >
       <div className="container-custom">
         {/* HEADER */}
@@ -42,7 +42,7 @@ export default function Team({
             {subtitle}
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 leading-tight whitespace-pre-line">
+          <h2 className="text-4xl md:text-5xl font-bold mt-2 leading-tight whitespace-pre-line">
             {title}
           </h2>
 

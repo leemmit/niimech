@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { withBasePath } from "@/lib/basePath";
+import Button from "@/ui/Button";
 
 export default function Header() {
   const navItems = [
@@ -39,9 +40,7 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
-          <button className="bg-blue text-white px-6 py-2 rounded-lg hover:bg-blue-hover transition-colors duration-300">
-            Получить консультацию
-          </button>
+          <Button className="!py-2">Получить консультацию</Button>
         </nav>
 
         <button className="md:hidden text-light-gray">

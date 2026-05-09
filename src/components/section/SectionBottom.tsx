@@ -1,5 +1,5 @@
 import { ServiceItem } from "@/lib/data";
-import ServicesGrid from "./ServicesGrid";
+import ServicesGrid from "../ServicesGrid";
 
 interface SectionBottomProps {
   servicesTitle?: string;

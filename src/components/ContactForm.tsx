@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import Button from "@/ui/Button";
 
 export default function ContactForm() {
   const [phone, setPhone] = useState("");
@@ -32,7 +33,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contacts" className="w-full bg-gray-50 py-20">
+    <section id="contacts" className="w-full bg-gray-50 py-10">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* LEFT */}
@@ -41,7 +42,7 @@ export default function ContactForm() {
               Контакты
             </span>
 
-            <h2 className="text-4xl font-bold mt-3 mb-4 leading-tight">
+            <h2 className="text-4xl font-bold mt-2 mb-4 leading-tight">
               Обсудим вашу задачу
             </h2>
 
@@ -104,7 +105,7 @@ export default function ContactForm() {
                     </div>
 
                     <a
-                      href="https://yandex.ru/maps"
+                      href="https://yandex.ru/maps/-/CPcGVFyB"
                       target="_blank"
                       className="inline-flex items-center gap-2 text-[#16b5da] font-medium hover:gap-3 transition-all"
                     >
@@ -202,7 +203,7 @@ export default function ContactForm() {
 
               {/* CHECKBOX */}
               <label className="flex items-start gap-3 cursor-pointer">
-                <input type="checkbox" className="mt-1 accent-[#16b5da]" />
+                <input type="checkbox" className="mt-1 accent-[#16b5da] " />
 
                 <span className="text-sm text-gray-600 leading-relaxed">
                   Я согласен на обработку персональных данных
@@ -210,12 +211,15 @@ export default function ContactForm() {
               </label>
 
               {/* BUTTON */}
-              <button
+              <Button type="submit" className="w-full">
+                Отправить заявку
+              </Button>
+              {/* <button
                 type="submit"
                 className="w-full h-13 rounded-xl bg-[#00BFFF] hover:bg-[#00a8e6] text-white font-semibold transition-all duration-300 shadow-lg shadow-sky-500/20"
               >
                 Отправить заявку
-              </button>
+              </button> */}
             </form>
           </div>
         </div>

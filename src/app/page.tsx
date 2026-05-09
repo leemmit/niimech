@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
 import Section from "@/components/section/Section";
-import ServicesGrid from "@/components/section/ServicesGrid";
+import ServicesGrid from "@/components/ServicesGrid";
 import Timeline from "@/components/Timeline";
 import Tabs from "@/components/Tabs";
 import Projects from "@/components/Projects";

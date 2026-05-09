@@ -14,7 +14,13 @@ interface Props {
 
 export default function Timeline({ items }: Props) {
   return (
-    <section className="w-full bg-gray py-16">
+    <section className="w-full bg-gray py-10">
+      <div className="container-custom">
+        <span className="text-sm uppercase tracking-[0.2em] text-[#16b5da] font-semibold">
+          Как мы работаем / Технология
+        </span>
+      </div>
+
       <div className="container-custom relative md:w-200 py-10">
         {/* центральная линия */}
         <div className="absolute left-1/2 top-0 h-full w-[3px] bg-gray-300 -translate-x-1/2" />

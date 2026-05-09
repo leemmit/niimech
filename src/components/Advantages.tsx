@@ -9,8 +9,14 @@ interface Props {
 
 export default function Advantages({ items }: Props) {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-10 bg-gray-50">
       <div className="container-custom">
+        <span className="text-sm uppercase tracking-[0.2em] text-[#16b5da] font-semibold">
+          Преимущества
+        </span>
+        <h2 className="text-4xl md:text-4xl font-bold mt-2 mb-5 leading-tight whitespace-pre-line">
+          Почему МиПК?
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {items.map((item, index) => {
             const Icon = icons[item.icon];

@@ -42,10 +42,11 @@ export default function Hero() {
 
             {/* 🖼 Картинка */}
             <Image
-              src={withBasePath("/logo_glow3.png")}
-              alt="logo"
-              fill
-              className="object-contain relative z-10"
+              src={withBasePath("/logo_glow5.png")}
+              alt="logo-glow"
+              width={300}
+              height={300}
+              className="object-contain relative z-10 "
               priority
             />
           </div>
