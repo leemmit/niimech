@@ -11,14 +11,15 @@ export default function Hero() {
   return (
     <>
       <div
-        id=""
-        className="bg-[#0c0d0e] text-white flex items-center py-8"
+        id="hero"
         style={{
-          height: "45%",
-          minHeight: "200px",
+          paddingTop: "var(--header-height)",
+          // height: "45%",
+          // minHeight: "200px",
         }}
+        className="bg-[#0c0d0e] text-white flex items-center py-8"
       >
-        <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-8 pt-8">
           <div className="max-w-[50%]">
             <h2 className="font-bold mb-4 leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               {"Проектируем уверенность.\nЦифровая инженерия для критических задач".toUpperCase()}

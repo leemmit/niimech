@@ -2,10 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import clsx from "clsx";
 import { withBasePath } from "@/lib/basePath";
 import Button from "@/ui/Button";
 
 export default function Header() {
+  const [hidden, setHidden] = useState(false);
+
   const navItems = [
     { name: "Услуги", href: "#services" },
     { name: "Проекты", href: "#projects" },
@@ -14,9 +18,40 @@ export default function Header() {
     { name: "Контакты", href: "#contacts" },
   ];
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const onScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (currentScrollY > lastScrollY && currentScrollY > 80) {
+            setHidden(true); // вниз → скрываем
+          } else {
+            setHidden(false); // вверх → показываем
+          }
+
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <header
-      className="fixed top-0 left-0 w-full bg-dark-gray z-50"
+      className={clsx(
+        "fixed top-0 left-0 w-full bg-dark-gray z-50 transition-transform duration-300 ease-out",
+        hidden ? "-translate-y-full" : "translate-y-0",
+      )}
       style={{ height: "var(--header-height)" }}
     >
       <div className="container-custom h-full flex items-center justify-between">

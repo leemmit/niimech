@@ -23,7 +23,7 @@ export default function RootLayout({
         <Header />
         <main
           style={{
-            paddingTop: "var(--header-height)",
+            // paddingTop: "var(--header-height)",
             backgroundColor: "e6e6e6",
           }}
         >
