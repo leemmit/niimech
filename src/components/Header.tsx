@@ -19,7 +19,13 @@ export default function Header() {
     >
       <div className="container-custom h-full flex items-center justify-between">
         <Link href="/" className="flex flex-col items-center relative">
-          <Image src="/logo3.png" alt="Logo" width={50} height={50} priority />
+          <Image
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logo3.png`}
+            alt="Logo"
+            width={50}
+            height={50}
+            priority
+          />
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
