@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { withBasePath } from "@/lib/basePath";
 
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 
@@ -36,7 +37,7 @@ const Footer = () => {
             {/* LOGO */}
             <Link href="/" className="inline-flex items-center gap-4 mb-6">
               <Image
-                src="/logo.png"
+                src={withBasePath("/logo.png")}
                 alt="МиПК"
                 width={52}
                 height={52}

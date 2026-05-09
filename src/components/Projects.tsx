@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { withBasePath } from "@/lib/basePath";
 
 interface Project {
   title: string;
@@ -72,7 +73,7 @@ export default function Projects({ projects }: Props) {
                 <div className="group bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all cursor-pointer h-full">
                   <div className="relative h-48 overflow-hidden">
                     <Image
-                      src={project.image}
+                      src={withBasePath(project.image)}
                       alt={project.title}
                       fill
                       className="object-cover group-hover:scale-105 transition duration-500"
@@ -150,7 +151,7 @@ export default function Projects({ projects }: Props) {
               <h3 className="text-2xl font-bold mb-4">{activeProject.title}</h3>
 
               <Image
-                src={activeProject.image}
+                src={withBasePath(activeProject.image)}
                 alt={activeProject.title}
                 width={600}
                 height={300}

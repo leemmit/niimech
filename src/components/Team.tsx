@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Mail } from "lucide-react";
+import { withBasePath } from "@/lib/basePath";
 
 export interface TeamMember {
   name: string;
@@ -64,7 +65,7 @@ export default function Team({
               {/* IMAGE */}
               <div className="relative h-[420px] overflow-hidden">
                 <Image
-                  src={person.image}
+                  src={withBasePath(person.image)}
                   alt={person.name}
                   fill
                   className="object-cover group-hover:scale-105 transition duration-700"

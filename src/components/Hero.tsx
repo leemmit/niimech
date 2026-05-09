@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "@/ui/Button";
 import PartnersSlider from "@/ui/PartnersSlider";
+import { withBasePath } from "@/lib/basePath";
 import "swiper/css";
 
 export default function Hero() {
@@ -40,7 +41,7 @@ export default function Hero() {
 
             {/* 🖼 Картинка */}
             <Image
-              src="/niimech/logo_glow3.png"
+              src={withBasePath("logo_glow3.png")}
               alt="logo"
               fill
               className="object-contain relative z-10"

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/lib/basePath";
 
 export default function PartnersSlider() {
   const logos1 = ["autodor", "severstal", "tochinvest", "nami"];
@@ -15,9 +16,9 @@ export default function PartnersSlider() {
         <div className="relative overflow-hidden mb-6">
           <div className="flex w-max gap-16 animate-marquee">
             {row1.map((name, i) => (
-              <img
+              <Image
                 key={i}
-                src={`/partners/${name}.png`}
+                src={withBasePath(`/partners/${name}.png`)}
                 alt={name}
                 width={120}
                 height={40}
@@ -33,7 +34,7 @@ export default function PartnersSlider() {
             {row2.map((name, i) => (
               <Image
                 key={i}
-                src={`/partners/${name}.png`}
+                src={withBasePath(`/partners/${name}.png`)}
                 alt={name}
                 width={120}
                 height={40}
