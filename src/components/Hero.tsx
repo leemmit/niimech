@@ -41,7 +41,7 @@ export default function Hero() {
 
             {/* 🖼 Картинка */}
             <Image
-              src={withBasePath("logo_glow3.png")}
+              src={withBasePath("/logo_glow3.png")}
               alt="logo"
               fill
               className="object-contain relative z-10"
