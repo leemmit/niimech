@@ -6,10 +6,12 @@ import { ChevronDown } from "lucide-react";
 import { withBasePath } from "@/lib/basePath";
 import Modal from "@/ui/Modal";
 import { motion, AnimatePresence } from "framer-motion";
+import GalleryCarousel from "@/ui/GalleryCarousel";
+import { galleries } from "@/lib/generated-galleries";
 
 interface Project {
   title: string;
-  image: string;
+  gallery: keyof typeof galleries;
   problem: string;
   result: string;
   highlights: string[];
@@ -23,6 +25,7 @@ interface Props {
 export default function Projects({ projects }: Props) {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const projectImages = activeProject ? galleries[activeProject.gallery] : [];
 
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
@@ -53,6 +56,7 @@ export default function Projects({ projects }: Props) {
           {/* ВСЕ КАРТОЧКИ В ОДНОМ ПОТОКЕ */}
           {projects.map((project, index) => {
             const isHidden = index >= 3 && !showAll;
+            const previewImage = galleries[project.gallery]?.[0];
 
             return (
               <motion.div
@@ -74,7 +78,7 @@ export default function Projects({ projects }: Props) {
                 <div className="group bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-all cursor-pointer h-full">
                   <div className="relative h-48 overflow-hidden">
                     <Image
-                      src={withBasePath(project.image)}
+                      src={withBasePath(previewImage)}
                       alt={project.title}
                       fill
                       className="object-cover group-hover:scale-105 transition duration-500"
@@ -145,22 +149,20 @@ export default function Projects({ projects }: Props) {
             <Modal onClose={() => setActiveProject(null)}>
               <h3 className="text-2xl font-bold mb-4">{activeProject.title}</h3>
 
-              <Image
-                src={withBasePath(activeProject.image)}
-                alt={activeProject.title}
-                width={600}
-                height={300}
-                className="rounded-lg mb-4 w-full h-56 object-cover"
-              />
+              <div className="mb-6">
+                <GalleryCarousel images={projectImages} />
+              </div>
 
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-lg mb-1">Задача</h4>
+
                   <p className="text-gray-600">{activeProject.problem}</p>
                 </div>
 
                 <div>
                   <h4 className="font-semibold text-lg mb-1">Результат</h4>
+
                   <p className="text-blue-600 font-medium">
                     {activeProject.result}
                   </p>
@@ -178,6 +180,7 @@ export default function Projects({ projects }: Props) {
                         className="flex items-start gap-2 text-sm text-gray-700"
                       >
                         <span className="text-blue-600 mt-[2px]">✓</span>
+
                         <span>{item}</span>
                       </div>
                     ))}

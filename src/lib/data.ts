@@ -1,4 +1,7 @@
 import { IconKey } from "./icons";
+import { galleries } from "@/lib/generated-galleries";
+
+type GalleryKey = keyof typeof galleries;
 
 export interface ServiceItem {
   icon: IconKey;
@@ -159,10 +162,17 @@ export const servicesTabs = [
   },
 ];
 
-export const projectsData = [
+export const projectsData: {
+  title: string;
+  gallery: GalleryKey;
+  problem: string;
+  result: string;
+  highlights: string[];
+  details: string;
+}[] = [
   {
     title: "Доработка дорожного ограждения",
-    image: "/projects/road-barrier.jpg",
+    gallery: "dorabotka",
     problem: "Конструкция не прошла натурные испытания",
     result: "Успешная сертификация после оптимизации",
     highlights: [
@@ -176,7 +186,7 @@ export const projectsData = [
 
   {
     title: "Мобильное фронтальное ограждение",
-    image: "/projects/mobile-barrier.jpg",
+    gallery: "mobile-front",
     problem: "Требовалась доработка конструкции",
     result: "Успешные натурные испытания",
     highlights: [
@@ -190,7 +200,7 @@ export const projectsData = [
 
   {
     title: "Противотаранный боллард 15 т / 50 км/ч",
-    image: "/projects/bollard.jpg",
+    gallery: "bollard",
     problem: "Первая версия конструкции не прошла испытания",
     result: "Доработанная версия успешно прошла тест",
     highlights: [
@@ -204,7 +214,7 @@ export const projectsData = [
 
   {
     title: "Гидравлический блокиратор 20 т / 40 км/ч",
-    image: "/projects/blocker.jpg",
+    gallery: "hydraulic",
     problem: "Необходимо увеличить удерживающую способность",
     result: "Выдерживает до 60 км/ч",
     highlights: [
@@ -218,7 +228,7 @@ export const projectsData = [
 
   {
     title: "Мостовое парапетное ограждение",
-    image: "/projects/bridge.jpg",
+    gallery: "mostovoe",
     problem: "Разработка новой конструкции без защемления",
     result: "Создана линейка и получен сертификат",
     highlights: ["Новая конструкция", "16 марок изделий", "СТО и сертификат"],
@@ -228,7 +238,7 @@ export const projectsData = [
 
   {
     title: "Акустический экран RC Technologies",
-    image: "/projects/screen.jpg",
+    gallery: "acoustic",
     problem: "Снижение материалоёмкости конструкции",
     result: "Сокращение длины с 30 м до 15 м",
     highlights: [
