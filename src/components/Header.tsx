@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { withBasePath } from "@/lib/basePath";
 
 export default function Header() {
   const navItems = [
@@ -20,7 +21,7 @@ export default function Header() {
       <div className="container-custom h-full flex items-center justify-between">
         <Link href="/" className="flex flex-col items-center relative">
           <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || "niimech"}/logo3.png`}
+            src={withBasePath("/logo3.png")}
             alt="Logo"
             width={50}
             height={50}

@@ -15,7 +15,7 @@ export default function PartnersSlider() {
         <div className="relative overflow-hidden mb-6">
           <div className="flex w-max gap-16 animate-marquee">
             {row1.map((name, i) => (
-              <Image
+              <img
                 key={i}
                 src={`/partners/${name}.png`}
                 alt={name}

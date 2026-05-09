@@ -40,7 +40,7 @@ export default function Hero() {
 
             {/* 🖼 Картинка */}
             <Image
-              src="/logo_glow3.png"
+              src="/niimech/logo_glow3.png"
               alt="logo"
               fill
               className="object-contain relative z-10"
