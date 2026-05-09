@@ -32,7 +32,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="w-full bg-gray-50 py-20">
+    <section id="contacts" className="w-full bg-gray-50 py-20">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* LEFT */}

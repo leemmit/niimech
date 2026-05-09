@@ -1,3 +1,5 @@
+"use client";
+
 import { ServiceItem } from "@/lib/data";
 import { icons } from "@/lib/icons";
 
@@ -7,9 +9,10 @@ interface Props {
 
 export default function ServicesGrid({ services }: Props) {
   if (!services.length) return null;
+  console.log("services.length", services.length);
 
   return (
-    <div className="container-custom py-4 md:py-6 lg:py-8">
+    <section id="services" className="container-custom py-4 md:py-6 lg:py-8">
       <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 md:gap-6 mb-6 md:mb-8">
         {services.map((service, index) => {
           const Icon = icons[service.icon];
@@ -35,6 +38,6 @@ export default function ServicesGrid({ services }: Props) {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }

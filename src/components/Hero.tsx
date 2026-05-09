@@ -11,6 +11,7 @@ export default function Hero() {
   return (
     <>
       <div
+        id=""
         className="bg-[#0c0d0e] text-white flex items-center py-8"
         style={{
           height: "45%",
@@ -54,7 +55,7 @@ export default function Hero() {
         <div className="">
           {/* Заголовок */}
           <h1 className="text-center text-4xl md:text-xl font-semibold text-gray-600">
-            Нам доверяют
+            Нам доверяют лидеры отрасли
           </h1>
 
           {/* Логотипы */}

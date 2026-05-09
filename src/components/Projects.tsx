@@ -2,9 +2,10 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { withBasePath } from "@/lib/basePath";
+import Modal from "@/ui/Modal";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface Project {
   title: string;
@@ -40,7 +41,7 @@ export default function Projects({ projects }: Props) {
   }, [showAll]);
 
   return (
-    <section className="w-full bg-gray-100 py-16">
+    <section id="projects" className="w-full bg-gray-100 py-16">
       <div className="container-custom">
         <h2 className="text-3xl font-bold mb-10">Проекты</h2>
 
@@ -139,15 +140,9 @@ export default function Projects({ projects }: Props) {
         </div>
 
         {/* MODAL */}
-        {activeProject && (
-          <div
-            className="fixed inset-0 bg-black/50 z-50 flex items-start justify-center pt-20"
-            onClick={() => setActiveProject(null)}
-          >
-            <div
-              className="bg-white w-full max-w-3xl rounded-xl p-6"
-              onClick={(e) => e.stopPropagation()}
-            >
+        <AnimatePresence>
+          {activeProject && (
+            <Modal onClose={() => setActiveProject(null)}>
               <h3 className="text-2xl font-bold mb-4">{activeProject.title}</h3>
 
               <Image
@@ -155,13 +150,53 @@ export default function Projects({ projects }: Props) {
                 alt={activeProject.title}
                 width={600}
                 height={300}
-                className="rounded-lg mb-4 w-full h-48 object-cover"
+                className="rounded-lg mb-4 w-full h-56 object-cover"
               />
 
-              <p>{activeProject.details}</p>
-            </div>
-          </div>
-        )}
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">Задача</h4>
+                  <p className="text-gray-600">{activeProject.problem}</p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">Результат</h4>
+                  <p className="text-blue-600 font-medium">
+                    {activeProject.result}
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">
+                    Ключевые особенности
+                  </h4>
+
+                  <div className="space-y-2">
+                    {activeProject.highlights.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-start gap-2 text-sm text-gray-700"
+                      >
+                        <span className="text-blue-600 mt-[2px]">✓</span>
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">
+                    Подробное описание
+                  </h4>
+
+                  <p className="text-gray-600 leading-relaxed">
+                    {activeProject.details}
+                  </p>
+                </div>
+              </div>
+            </Modal>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

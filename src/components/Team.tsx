@@ -25,7 +25,10 @@ export default function Team({
   members,
 }: Props) {
   return (
-    <section className="w-full bg-black text-white py-20 overflow-hidden">
+    <section
+      id="team"
+      className="w-full bg-black text-white py-20 overflow-hidden"
+    >
       <div className="container-custom">
         {/* HEADER */}
         <motion.div
