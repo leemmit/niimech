@@ -51,13 +51,13 @@ export default function GalleryCarousel({ images }: Props) {
           {images.map((img, index) => (
             <div
               key={index}
-              className="relative min-w-full h-[420px] bg-gray-100"
+              className="relative min-w-full h-[360px] bg-gray-100"
             >
               <Image
                 src={withBasePath(img)}
                 alt={`gallery-${index}`}
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           ))}
@@ -66,7 +66,7 @@ export default function GalleryCarousel({ images }: Props) {
         {/* LEFT */}
         <button
           onClick={scrollPrev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:scale-105 transition"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 h-14 w-14 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:scale-105 transition"
         >
           <ChevronLeft size={22} />
         </button>
@@ -74,19 +74,19 @@ export default function GalleryCarousel({ images }: Props) {
         {/* RIGHT */}
         <button
           onClick={scrollNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:scale-105 transition"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 h-14 w-14 rounded-full bg-white/90 shadow-lg flex items-center justify-center hover:scale-105 transition"
         >
           <ChevronRight size={22} />
         </button>
       </div>
 
       {/* THUMBNAILS */}
-      <div className="flex gap-3 mt-4 overflow-x-auto pb-1">
+      <div className="flex gap-3 mt-2 overflow-x-auto pb-1 justify-center">
         {images.map((img, index) => (
           <button
             key={index}
             onClick={() => emblaApi?.scrollTo(index)}
-            className={`relative h-20 w-32 shrink-0 overflow-hidden rounded-xl border-2 transition-all ${
+            className={`relative h-10 w-18 shrink-0 overflow-hidden rounded-md border-2 transition-all ${
               selected === index
                 ? "border-sky-500 scale-[1.02]"
                 : "border-transparent opacity-70 hover:opacity-100"
@@ -96,7 +96,7 @@ export default function GalleryCarousel({ images }: Props) {
               src={withBasePath(img)}
               alt={`thumb-${index}`}
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </button>
         ))}

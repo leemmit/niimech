@@ -32,7 +32,7 @@ export default function Modal({ children, onClose }: Props) {
       onClick={onClose}
     >
       <motion.div
-        className="relative w-full max-w-300 max-h-[90vh] overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl"
+        className="relative w-full md:max-w-220 max-h-[92vh] overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl"
         initial={{ opacity: 0, scale: 0.96, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.96, y: 20 }}
@@ -45,7 +45,7 @@ export default function Modal({ children, onClose }: Props) {
         {/* CLOSE BUTTON */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-200 hover:bg-gray-100"
+          className="absolute top-4 right-4 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-200 hover:bg-gray-100 border border-gray-300"
         >
           <X size={20} />
         </button>

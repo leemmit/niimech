@@ -8,6 +8,7 @@ import Modal from "@/ui/Modal";
 import { motion, AnimatePresence } from "framer-motion";
 import GalleryCarousel from "@/ui/GalleryCarousel";
 import { galleries } from "@/lib/generated-galleries";
+import { MoveRight } from "lucide-react";
 
 interface Project {
   title: string;
@@ -81,7 +82,7 @@ export default function Projects({ projects }: Props) {
                       src={withBasePath(previewImage)}
                       alt={project.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition duration-500"
+                      className="object-contain group-hover:scale-105 transition duration-500"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition" />
                   </div>
@@ -91,19 +92,19 @@ export default function Projects({ projects }: Props) {
                       {project.title}
                     </h3>
 
-                    <p className="text-sm text-gray-500 mb-2">
+                    {/* <p className="text-sm text-gray-500 mb-2">
                       {project.problem}
-                    </p>
+                    </p> */}
 
-                    <p className="text-sm font-semibold text-blue-600 mb-3">
+                    {/* <p className="text-sm font-semibold text-blue-600 mb-3">
                       ✔ {project.result}
-                    </p>
+                    </p> */}
 
                     <div className="space-y-1 mb-4">
                       {project.highlights.map((item, idx) => (
                         <div
                           key={idx}
-                          className="text-xs text-gray-600 flex gap-2"
+                          className="text-sm text-gray-600 flex gap-2"
                         >
                           <span className="text-blue-600">•</span>
                           <span>{item}</span>
@@ -147,14 +148,26 @@ export default function Projects({ projects }: Props) {
         <AnimatePresence>
           {activeProject && (
             <Modal onClose={() => setActiveProject(null)}>
-              <h3 className="text-2xl font-bold mb-4">{activeProject.title}</h3>
+              <h3 className="text-2xl font-bold mb-4 md:mb-2">
+                {activeProject.title}
+              </h3>
 
-              <div className="mb-6">
+              <div className="mb-2">
                 <GalleryCarousel images={projectImages} />
               </div>
 
               <div className="space-y-4">
-                <div>
+                <div className="flex justify-between">
+                  <h4 className="text-red-700 font-semibold md:max-w-80 text-center text-lg mb-1">
+                    {activeProject.problem}
+                  </h4>
+                  <MoveRight />
+                  <h4 className="text-green-500 font-semibold md:max-w-80 text-center text-lg mb-1">
+                    {activeProject.result}
+                  </h4>
+                </div>
+
+                {/* <div>
                   <h4 className="font-semibold text-lg mb-1">Задача</h4>
 
                   <p className="text-gray-600">{activeProject.problem}</p>
@@ -166,9 +179,19 @@ export default function Projects({ projects }: Props) {
                   <p className="text-blue-600 font-medium">
                     {activeProject.result}
                   </p>
-                </div>
+                </div> */}
 
                 <div>
+                  <h4 className="font-semibold text-lg mb-1">
+                    Подробное описание
+                  </h4>
+
+                  <p className="text-gray-600 leading-relaxed">
+                    {activeProject.details}
+                  </p>
+                </div>
+
+                {/* <div>
                   <h4 className="font-semibold text-lg mb-2">
                     Ключевые особенности
                   </h4>
@@ -185,17 +208,7 @@ export default function Projects({ projects }: Props) {
                       </div>
                     ))}
                   </div>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-lg mb-1">
-                    Подробное описание
-                  </h4>
-
-                  <p className="text-gray-600 leading-relaxed">
-                    {activeProject.details}
-                  </p>
-                </div>
+                </div> */}
               </div>
             </Modal>
           )}
