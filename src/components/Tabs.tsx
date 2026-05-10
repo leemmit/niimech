@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { CheckCheck, SquareCheckBig } from "lucide-react";
 
 interface Tab {
   title: string;
@@ -32,7 +33,7 @@ export default function Tabs({ tabs }: TabsProps) {
               onClick={() => setActive(i)}
               className={`text-left px-4 py-3 rounded-xl border transition-all duration-200 w-full max-w-[300px] cursor-pointer ${
                 active === i
-                  ? "bg-blue-600 text-white shadow-md border-blue-600"
+                  ? "bg-(--hover-dark) text-white shadow-md border-(--hover-dark)"
                   : "bg-white hover:bg-gray-50 border-gray-200"
               }`}
               aria-selected={active === i}
@@ -56,15 +57,15 @@ export default function Tabs({ tabs }: TabsProps) {
               className="absolute w-full"
             >
               {/* TITLE */}
-              <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-800">
+              <h3 className="text-xl md:text-2xl font-bold mb-8 text-gray-800">
                 {tabs[active].title}
               </h3>
 
               {/* LIST */}
-              <ul className="space-y-3">
+              <ul className="space-y-6">
                 {tabs[active].content.map((item, i) => (
                   <li key={i} className="flex gap-2 items-start">
-                    <span className="text-blue-600 mt-1 flex-shrink-0">✓</span>
+                    <CheckCheck className="text-(--hover-dark)" />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}

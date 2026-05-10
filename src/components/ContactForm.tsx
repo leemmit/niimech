@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 import Button from "@/ui/Button";
+import Heading from "@/ui/Heading";
 
 export default function ContactForm() {
   const [phone, setPhone] = useState("");
@@ -38,9 +39,7 @@ export default function ContactForm() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* LEFT */}
           <div>
-            <span className="text-sm font-medium text-[#16b5da] uppercase tracking-wider">
-              Контакты
-            </span>
+            <Heading>Контакты</Heading>
 
             <h2 className="text-4xl font-bold mt-2 mb-4 leading-tight">
               Обсудим вашу задачу

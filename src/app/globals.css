@@ -3,6 +3,12 @@
 /* Глобальные переменные - ТОЛЬКО ЗДЕСЬ */
 :root {
   --header-height: 60px;
+
+   /* Colors */
+   --base: #00BFFF;
+   --hover-dark: #009ad2;
+   --hover-light: #8ae0ff;
+   --heading: #16b5da;
 }
 
 html, body {

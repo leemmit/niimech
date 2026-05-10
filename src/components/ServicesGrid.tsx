@@ -2,6 +2,7 @@
 
 import { ServiceItem } from "@/lib/data";
 import { icons } from "@/lib/icons";
+import Heading from "@/ui/Heading";
 
 interface Props {
   services: ServiceItem[];
@@ -13,9 +14,7 @@ export default function ServicesGrid({ services }: Props) {
 
   return (
     <section id="services" className="container-custom py-4 md:py-6 lg:py-8">
-      <span className="text-sm uppercase tracking-[0.2em] text-[#16b5da] font-semibold">
-        Числа и достижения
-      </span>
+      <Heading>Числа и достижения</Heading>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 md:gap-6 mb-6 md:mb-8 py-6">
         {services.map((service, index) => {
           const Icon = icons[service.icon];

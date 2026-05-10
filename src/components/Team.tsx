@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Mail } from "lucide-react";
 import { withBasePath } from "@/lib/basePath";
+import Heading from "@/ui/Heading";
 
 export interface TeamMember {
   name: string;
@@ -38,9 +39,7 @@ export default function Team({
           viewport={{ once: true }}
           className="max-w-3xl mb-16"
         >
-          <span className="text-sm uppercase tracking-[0.2em] text-[#16b5da] font-semibold">
-            {subtitle}
-          </span>
+          <Heading>{subtitle}</Heading>
 
           <h2 className="text-4xl md:text-5xl font-bold mt-2 leading-tight whitespace-pre-line">
             {title}

@@ -10,6 +10,7 @@ import GalleryCarousel from "@/ui/GalleryCarousel";
 import { galleries } from "@/lib/generated-galleries";
 import { MoveRight } from "lucide-react";
 import Button from "@/ui/Button";
+import Heading from "@/ui/Heading";
 
 interface Project {
   title: string;
@@ -48,9 +49,7 @@ export default function Projects({ projects }: Props) {
   return (
     <section id="projects" className="w-full bg-gray-100 py-10">
       <div className="container-custom">
-        <span className="text-sm uppercase tracking-[0.2em] text-[#16b5da] font-semibold">
-          Проекты
-        </span>
+        <Heading>Проекты</Heading>
         <h2 className="text-4xl md:text-4xl font-bold mt-2 mb-5 leading-tight whitespace-pre-line">
           Наши работы
         </h2>
@@ -112,7 +111,7 @@ export default function Projects({ projects }: Props) {
                           key={idx}
                           className="text-sm text-gray-600 flex gap-2"
                         >
-                          <span className="text-blue-600">•</span>
+                          <span className="text-(--hover-dark)">•</span>
                           <span>{item}</span>
                         </div>
                       ))}
@@ -123,7 +122,7 @@ export default function Projects({ projects }: Props) {
                         e.stopPropagation();
                         setActiveProject(project);
                       }}
-                      className="text-sm font-medium text-blue-600 hover:underline"
+                      className="text-sm font-medium text-(--base) hover:underline"
                     >
                       Читать подробнее →
                     </button>

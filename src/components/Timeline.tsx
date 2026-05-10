@@ -1,5 +1,6 @@
 "use client";
 
+import Heading from "@/ui/Heading";
 import { motion } from "framer-motion";
 
 interface TimelineItem {
@@ -16,9 +17,7 @@ export default function Timeline({ items }: Props) {
   return (
     <section className="w-full bg-gray py-10">
       <div className="container-custom">
-        <span className="text-sm uppercase tracking-[0.2em] text-[#16b5da] font-semibold">
-          Как мы работаем / Технология
-        </span>
+        <Heading>Как мы работаем / Технология</Heading>
       </div>
 
       <div className="container-custom relative md:w-200 py-10">
@@ -51,7 +50,7 @@ export default function Timeline({ items }: Props) {
                 >
                   {/* точка */}
                   <div
-                    className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-blue-500 rounded-full
+                    className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-(--base) rounded-full
                     ${isLeft ? "-right-2" : "-left-2"}`}
                   />
 

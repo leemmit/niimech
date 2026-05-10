@@ -53,14 +53,13 @@ export default function Hero() {
         </div>
       </div>
       <div className="bg-white pt-5 md:pt-8">
-        <div className="">
-          {/* Заголовок */}
-          <h1 className="text-center text-4xl md:text-xl font-semibold text-gray-600">
-            Нам доверяют лидеры отрасли
-          </h1>
+        {/* Заголовок */}
+        <h1 className="text-center text-4xl md:text-xl font-semibold text-gray-600">
+          Нам доверяют лидеры отрасли
+        </h1>
 
-          {/* Логотипы */}
-          {/* <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+        {/* Логотипы */}
+        {/* <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
             <Image
               src="/autodor.png"
               alt="Автодор"
@@ -94,8 +93,7 @@ export default function Hero() {
             />
           </div> */}
 
-          <PartnersSlider />
-        </div>
+        <PartnersSlider />
       </div>
     </>
   );

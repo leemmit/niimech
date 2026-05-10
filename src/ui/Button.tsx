@@ -30,10 +30,10 @@ export default function Button(props: Props) {
   const classes = clsx(
     "inline-flex items-center justify-center gap-2 px-5 py-3 md:px-6 rounded-xl transition-all duration-300 text-sm md:text-base font-semibold",
     {
-      "bg-[#00BFFF] text-white hover:bg-[#009ad2] shadow-lg shadow-sky-500/20":
+      "bg-[var(--base)] text-white hover:bg-[var(--hover-dark)] shadow-lg shadow-sky-500/20":
         variant === "filled",
 
-      "border border-[#00BFFF] text-[#00BFFF] hover:border-[#8ae0ff] hover:text-[#8ae0ff]":
+      "border border-[var(--base)] text-[var(--base)] hover:border-[var(--hover-light)] hover:text-[var(--hover-light)]":
         variant === "outline",
     },
     className,

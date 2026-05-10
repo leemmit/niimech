@@ -2,6 +2,7 @@
 
 import { AdvantageItem } from "@/lib/data";
 import { icons } from "@/lib/icons";
+import Heading from "@/ui/Heading";
 
 interface Props {
   items: AdvantageItem[];
@@ -11,9 +12,7 @@ export default function Advantages({ items }: Props) {
   return (
     <section className="py-10 bg-gray-50">
       <div className="container-custom">
-        <span className="text-sm uppercase tracking-[0.2em] text-[#16b5da] font-semibold">
-          Преимущества
-        </span>
+        <Heading>Преимущества</Heading>
         <h2 className="text-4xl md:text-4xl font-bold mt-2 mb-5 leading-tight whitespace-pre-line">
           Почему МиПК?
         </h2>

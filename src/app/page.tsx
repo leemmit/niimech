@@ -7,6 +7,7 @@ import Projects from "@/components/Projects";
 import Advantages from "@/components/Advantages";
 import Team from "@/components/Team";
 import ContactForm from "@/components/ContactForm";
+import Partners from "@/components/Partners";
 import { projectsData, sectionsData, ServiceItem } from "@/lib/data";
 import {
   block2,
@@ -26,6 +27,7 @@ export default function Home() {
       <Projects projects={projectsData} />
       <Advantages items={advantages} />
       <Team members={team} />
+      <Partners />
       <ContactForm />
 
       {/* {sectionsData.map((section) => (
