@@ -47,8 +47,8 @@ export default function Projects({ projects }: Props) {
   }, [showAll]);
 
   return (
-    <section id="projects" className="w-full bg-gray-100 py-10">
-      <div className="container-custom">
+    <section id="projects" className="w-full bg-gray-100 py-6">
+      <div className="container-custom pt-(--header-height)">
         <Heading>Проекты</Heading>
         <h2 className="text-4xl md:text-4xl font-bold mt-2 mb-5 leading-tight whitespace-pre-line">
           Наши работы

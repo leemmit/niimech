@@ -28,9 +28,9 @@ export default function Team({
   return (
     <section
       id="team"
-      className="w-full bg-black text-white py-10 overflow-hidden"
+      className="w-full bg-black text-white py-6 overflow-hidden"
     >
-      <div className="container-custom">
+      <div className="container-custom pt-(--header-height)">
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}

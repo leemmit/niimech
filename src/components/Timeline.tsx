@@ -15,7 +15,7 @@ interface Props {
 
 export default function Timeline({ items }: Props) {
   return (
-    <section className="relative overflow-hidden bg-[#0b1118] py-10">
+    <section className="relative overflow-hidden bg-[#0b1118] py-10 pt-(--header-height)">
       {/* BACKGROUND GLOW */}
       <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
 

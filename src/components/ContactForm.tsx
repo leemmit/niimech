@@ -34,8 +34,8 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contacts" className="w-full bg-gray-50 py-10">
-      <div className="container-custom">
+    <section id="contacts" className="w-full bg-gray-50 py-6">
+      <div className="container-custom pt-(--header-height)">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* LEFT */}
           <div>

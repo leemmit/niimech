@@ -22,7 +22,7 @@ export default function Tabs({ tabs }: TabsProps) {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-gray-100 py-10"
+      className="relative overflow-hidden bg-gray-100 py-10 pt-(--header-height)"
     >
       {/* GLOW */}
       <div className="absolute left-0 top-0 h-[400px] w-[400px] rounded-full bg-[#16b5da]/10 blur-3xl" />

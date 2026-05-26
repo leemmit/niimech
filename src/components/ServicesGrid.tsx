@@ -13,8 +13,8 @@ export default function ServicesGrid({ services }: Props) {
   console.log("services.length", services.length);
 
   return (
-    <section id="services" className=" bg-gray-100 py-4 md:py-6 lg:py-8">
-      <div className="container-custom">
+    <section id="" className=" bg-gray-100 py-4 md:py-6 lg:py-8 ">
+      <div className="container-custom pt-(--header-height)">
         {/* HEADER */}
         <div className="mb-5">
           <Heading>Числа и достижения</Heading>
