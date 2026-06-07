@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { withBasePath } from "@/lib/basePath";
 import Button from "@/ui/Button";
-import { Menu, Sparkles } from "lucide-react";
+import { Menu, Sparkles, UserRound } from "lucide-react";
 
 export default function Header() {
   const navItems = [
@@ -163,6 +163,31 @@ export default function Header() {
             <div
               className="
                 absolute inset-0 opacity-0 hover:opacity-100
+                transition duration-500
+                bg-gradient-to-r from-cyan-400/20 to-blue-500/20
+              "
+            />
+          </Button>
+        </div>
+
+        <div className="hidden md:flex items-center gap-3">
+          <Button
+            className="
+              !py-2.5 !px-5
+              relative overflow-hidden
+              border border-cyan-400/20
+              bg-white/[0.03]
+              shadow-[0_0_30px_rgba(34,211,238,0.15)]
+            "
+            variant="outline"
+          >
+            <UserRound />
+            {/* <span className="relative z-10">Получить консультацию</span> */}
+
+            {/* button glow */}
+            <div
+              className="
+                absolute inset-0 opacity-100 hover:opacity-0
                 transition duration-500
                 bg-gradient-to-r from-cyan-400/20 to-blue-500/20
               "
