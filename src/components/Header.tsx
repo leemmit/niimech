@@ -2,14 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-<<<<<<< Updated upstream
-=======
 import { withBasePath } from "@/lib/basePath";
 import Button from "@/ui/Button";
 import { Menu, Sparkles, UserRound } from "lucide-react";
 import { useState } from "react";
 import Login from "./account/Login";
->>>>>>> Stashed changes
 
 interface HeaderProps {
   onLoginClick: () => void;
@@ -151,7 +148,35 @@ export default function Header({ onLoginClick }: HeaderProps) {
           ))}
         </nav>
 
-        <button className="md:hidden text-light-gray">
+        {/* ================= CTA ================= */}
+        <div className="hidden md:flex items-center gap-3">
+          <Button
+            className="
+              !py-2.5 !px-5
+              relative overflow-hidden
+              border border-cyan-400/20
+              shadow-[0_0_30px_rgba(34,211,238,0.15)]
+            "
+            onClick={() =>
+              document
+                .getElementById("contacts")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            <span className="relative z-10">Получить консультацию</span>
+
+            {/* button glow */}
+            <div
+              className="
+                absolute inset-0 opacity-0 hover:opacity-100
+                transition duration-500
+                bg-gradient-to-r from-cyan-400/20 to-blue-500/20
+              "
+            />
+          </Button>
+        </div>
+
+        <Button className="md:hidden text-light-gray">
           <svg
             className="w-6 h-6"
             fill="none"
@@ -164,11 +189,8 @@ export default function Header({ onLoginClick }: HeaderProps) {
               strokeWidth={2}
               d="M4 6h16M4 12h16M4 18h16"
             />
-<<<<<<< Updated upstream
           </svg>
-=======
-          </Button>
-        </div>
+        </Button>
 
         {/* ================= LOGIN ================= */}
         <div className="hidden md:flex items-center gap-3">
@@ -213,7 +235,6 @@ export default function Header({ onLoginClick }: HeaderProps) {
           "
         >
           <Menu size={22} />
->>>>>>> Stashed changes
         </button>
       </div>
     </header>

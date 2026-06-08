@@ -9,16 +9,8 @@ import Projects from "@/components/Projects";
 import Advantages from "@/components/Advantages";
 import Team from "@/components/Team";
 import ContactForm from "@/components/ContactForm";
-<<<<<<< Updated upstream
 import Partners from "@/components/Partners";
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
 import { projectsData, sectionsData, ServiceItem } from "@/lib/data";
-=======
-import Partners from "@/components/Partners";
-import { projectsData } from "@/lib/data";
->>>>>>> Stashed changes
 import {
   block2,
   timelineData,
