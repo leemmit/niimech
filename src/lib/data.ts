@@ -39,22 +39,22 @@ export const team: TeamMember[] = [
   {
     name: "Тавшавадзе Бека Темурович",
     role: "Генеральный директор",
-    image: "/team/beka.jpg",
+    image: "/team/beka_temurovich.png",
   },
   {
     name: "Карпов Илья Анатольевич",
     role: "Технический директор",
-    image: "/team/karpov.jpg",
+    image: "/team/ilya_anatolievich.png",
   },
   {
     name: "Мухаметова Аделина Артуровна",
     role: "Заведующий лабораторией",
-    image: "/team/adelina.jpg",
+    image: "/team/adelina_arturovna.png",
   },
   {
     name: "Демьянушко Ирина Вадимовна",
     role: "Директор по развитию",
-    image: "/team/irina.jpg",
+    image: "/team/irina_vadimovna.png",
   },
 ];
 

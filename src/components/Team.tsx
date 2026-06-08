@@ -51,7 +51,7 @@ export default function Team({
         </motion.div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-16">
           {members.map((person, index) => (
             <motion.div
               key={index}
@@ -65,7 +65,7 @@ export default function Team({
               className="group relative rounded-2xl overflow-hidden bg-[#111] border border-white/10 hover:border-[#16b5da]/40 transition-all duration-500"
             >
               {/* IMAGE */}
-              <div className="relative h-[420px] overflow-hidden">
+              <div className="relative h-[320px] overflow-hidden">
                 <Image
                   src={withBasePath(person.image)}
                   alt={person.name}
@@ -79,20 +79,20 @@ export default function Team({
               </div>
 
               {/* CONTENT */}
-              <div className="absolute bottom-0 left-0 w-full p-6 z-10">
-                <span className="inline-block text-xs uppercase tracking-wider text-[#16b5da] mb-2">
+              <div className="absolute bottom-0 left-0 w-full p-4 z-10">
+                <span className="inline-block text-[12px] uppercase tracking-wider text-[#16b5da] mb-2">
                   {person.role}
                 </span>
 
-                <h3 className="text-xl font-semibold leading-snug mb-4">
+                <h3 className="text-lg font-semibold leading-snug mb-2">
                   {person.name}
                 </h3>
 
-                <div className="flex items-center gap-3 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                {/* <div className="flex items-center gap-1 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                   <button className="w-9 h-9 rounded-full bg-white/10 hover:bg-[#16b5da] flex items-center justify-center transition">
                     <Mail size={16} />
                   </button>
-                </div>
+                </div> */}
               </div>
 
               <div className="absolute inset-0 rounded-2xl border border-[#16b5da]/0 group-hover:border-[#16b5da]/40 transition duration-500 pointer-events-none" />

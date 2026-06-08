@@ -23,16 +23,16 @@ export default function Modal({ children, onClose }: Props) {
   }, [onClose]);
 
   return (
-    <motion.div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.2 }}
-      onClick={onClose}
-    >
+    <AnimatePresence>
       <motion.div
-        className="relative w-full md:max-w-220 max-h-[92vh] overflow-y-auto rounded-2xl bg-white p-6 shadow-2xl"
+<<<<<<< Updated upstream
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+=======
+        className="relative w-full md:max-w-220 max-h-[92vh] overflow-y-auto rounded-2xl bg-[#0b0f13] border border-white/10 p-6 shadow-2xl"
         initial={{ opacity: 0, scale: 0.96, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.96, y: 20 }}
@@ -41,14 +41,23 @@ export default function Modal({ children, onClose }: Props) {
           ease: "easeOut",
         }}
         onClick={(e) => e.stopPropagation()}
+>>>>>>> Stashed changes
       >
-        {/* CLOSE BUTTON */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-200 hover:bg-gray-100 border border-gray-300"
+        <motion.div
+          className="bg-white rounded-xl p-6 max-w-2xl w-full relative"
+          initial={{ scale: 0.95, opacity: 0, y: 20 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0.95, opacity: 0, y: 20 }}
+          transition={{ duration: 0.2 }}
+          onClick={(e) => e.stopPropagation()}
         >
-          <X size={20} />
-        </button>
+          {/* CLOSE BUTTON */}
+          <button
+            onClick={onClose}
+            className="absolute top-3 right-3 text-gray-400 hover:text-black"
+          >
+            ✕
+          </button>
 
         <div className="pr-8">{children}</div>
       </motion.div>
