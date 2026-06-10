@@ -125,7 +125,7 @@ export default function Header({ onLoginClick }: HeaderProps) {
               href={item.href}
               className="
                 relative text-sm font-medium
-                text-gray-300
+                text-(--base)
                 hover:text-cyan-300
                 transition-all duration-300
                 group
@@ -176,7 +176,7 @@ export default function Header({ onLoginClick }: HeaderProps) {
           </Button>
         </div>
 
-        <Button className="md:hidden text-light-gray">
+        {/* <Button className="md:hidden text-light-gray">
           <svg
             className="w-6 h-6"
             fill="none"
@@ -190,7 +190,7 @@ export default function Header({ onLoginClick }: HeaderProps) {
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
-        </Button>
+        </Button> */}
 
         {/* ================= LOGIN ================= */}
         <div className="hidden md:flex items-center gap-3">
@@ -199,19 +199,16 @@ export default function Header({ onLoginClick }: HeaderProps) {
               !py-2.5 !px-5
               relative overflow-hidden
               border border-cyan-400/20
-              bg-white/[0.03]
               shadow-[0_0_30px_rgba(34,211,238,0.15)]
             "
-            variant="outline"
             onClick={onLoginClick}
           >
             <UserRound />
-            {/* <span className="relative z-10">Получить консультацию</span> */}
 
             {/* button glow */}
             <div
               className="
-                absolute inset-0 opacity-100 hover:opacity-0
+                absolute inset-0 opacity-0 hover:opacity-100
                 transition duration-500
                 bg-gradient-to-r from-cyan-400/20 to-blue-500/20
               "
