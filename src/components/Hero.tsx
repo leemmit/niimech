@@ -231,12 +231,8 @@ export default function Hero() {
               absolute top-6 left-0
               hidden xl:flex
               px-4 py-3
-              rounded-2xl
-              border border-white/10
-              bg-white/[0.04]
-              backdrop-blur-xl
+              bg-transparent
               text-sm text-gray-300
-              shadow-xl
             "
           >
             Виртуальные испытания
@@ -247,12 +243,8 @@ export default function Hero() {
               absolute bottom-6 right-0
               hidden xl:flex
               px-4 py-3
-              rounded-2xl
-              border border-cyan-400/20
-              bg-cyan-400/10
-              backdrop-blur-xl
+              bg-transparent
               text-sm text-cyan-200
-              shadow-[0_0_30px_rgba(34,211,238,0.15)]
             "
           >
             Проведение расчетов
