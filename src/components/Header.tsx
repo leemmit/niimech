@@ -10,9 +10,17 @@ import Login from "./account/Login";
 
 interface HeaderProps {
   onLoginClick: () => void;
+  onApplicationClick: () => void;
 }
 
-export default function Header({ onLoginClick }: HeaderProps) {
+export default function Header({
+  onLoginClick,
+  onApplicationClick,
+}: HeaderProps) {
+  console.log("Header rendered", {
+    onLoginClick,
+    onApplicationClick,
+  });
   const navItems = [
     { name: "Услуги", href: "#services" },
     { name: "Проекты", href: "#projects" },
@@ -157,11 +165,7 @@ export default function Header({ onLoginClick }: HeaderProps) {
               border border-cyan-400/20
               shadow-[0_0_30px_rgba(34,211,238,0.15)]
             "
-            onClick={() =>
-              document
-                .getElementById("contacts")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={onApplicationClick}
           >
             <span className="relative z-10">Получить консультацию</span>
 
@@ -176,22 +180,6 @@ export default function Header({ onLoginClick }: HeaderProps) {
           </Button>
         </div>
 
-        {/* <Button className="md:hidden text-light-gray">
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </Button> */}
-
         {/* ================= LOGIN ================= */}
         <div className="hidden md:flex items-center gap-3">
           <Button
@@ -201,7 +189,10 @@ export default function Header({ onLoginClick }: HeaderProps) {
               border border-cyan-400/20
               shadow-[0_0_30px_rgba(34,211,238,0.15)]
             "
-            onClick={onLoginClick}
+            onClick={() => {
+              console.log("LOGIN CLICK");
+              onLoginClick;
+            }}
           >
             <UserRound />
 

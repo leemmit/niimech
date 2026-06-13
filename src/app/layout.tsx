@@ -21,16 +21,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={inter.className}>
-        <Header />
-        <main
-          style={{
-            //marginTop: "var(--header-height)",
-            backgroundColor: "e6e6e6",
-          }}
-        >
-          {children}
-        </main>
-        <Footer />
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

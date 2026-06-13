@@ -14,6 +14,8 @@ export default function Login({ open, onClose }: Props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  console.log("Login render", open);
+
   if (!open) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
